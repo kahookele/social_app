@@ -1,0 +1,27 @@
+<div class="card shadow w-50 p-3">
+    <%= form_with(model: @new_post, url: posts_path) do |form| %>
+      <% if @new_post.errors.any? %>
+        <div class="alert alert-danger alert-dismissible fade show">
+          <ul>
+          <% @new_post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group mb-3">
+      <%= form.text_field :title, placeholder: "Title", class: "form-control" %>
+    </div>
+    <div class="form-group mb-3">
+      <%= form.text_area :content, placeholder: "Add content here", class: "form-control myInput" %>
+    </div>
+    <div class="form-group mb-3">
+      <%= form.file_field :file, class: "form-control-file" %>
+    </div>
+    <div class="form-group mb-3 d-flex align-items-center justify-content-end gap-3">
+      <%= link_to "Cancel", home_index_path, class: "btn btn-secondary" %>
+      <%= form.submit "Create Post", class: "btn btn-primary", id: "myButton" %>
+    </div>
+  <% end %>
+</div>

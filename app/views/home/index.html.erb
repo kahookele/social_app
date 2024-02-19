@@ -1,0 +1,14 @@
+<div class="container-fluid" style="height: 100vh;">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Column 1 content here -->
+      <%= button_to "Logout", home_path(@current_user), method: :delete, class: "btn btn-primary" %>
+      <%= link_to "Create post", new_post_path %>
+    </div>
+    <div class="col-md-6">
+      <!-- Column 2 content here -->
+    </div>
+    <div class="col-md-3">
+      <!-- Column 3 content here -->
+    </div>
+  </div>
